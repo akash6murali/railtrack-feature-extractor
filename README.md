@@ -1,4 +1,4 @@
-# Rail Track Feature Extraction (RT-FE)
+# railtrack-feature-extractor (rt-fe)
 
 <p float="left">
   <img src="https://github.com/AnanthaPadmanaban-KrishnaKumar/RT-FE/blob/main/assets/input_video.gif" width="49%" style="margin-right: 2%;" />
