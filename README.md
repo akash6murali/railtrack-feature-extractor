@@ -188,7 +188,7 @@ Make sure you have the following installed:
 - Git
 
 ### Installation
-1. git clone [https://github.com/akash6murali/railtrack-feature-extractor.git](https://github.com/AnanthaPadmanaban-KrishnaKumar/RT-FODS)
+1. git clone [https://github.com/akash6murali/railtrack-feature-extractor.git](https://github.com/akash6murali/railtrack-feature-extractor)
 2. cd RT-FE
 3. pip install -r requirements.txt
 
