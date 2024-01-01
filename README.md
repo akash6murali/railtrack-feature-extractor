@@ -1,8 +1,8 @@
 # railtrack-feature-extractor (rt-fe)
 
 <p float="left">
-  <img src="https://github.com/AnanthaPadmanaban-KrishnaKumar/RT-FE/blob/main/assets/input_video.gif" width="49%" style="margin-right: 2%;" />
-  <img src="https://github.com/AnanthaPadmanaban-KrishnaKumar/RT-FE/blob/main/assets/output_video.gif" width="49%" />
+  <img src="https://github.com/akash6murali/railtrack-feature-extractor/blob/main/assets/input_video.gif" width="49%" style="margin-right: 2%;" />
+  <img src="https://github.com/akash6murali/railtrack-feature-extractor/blob/main/assets/output_video.gif" width="49%" />
 </p>
 
 
@@ -41,7 +41,7 @@ The dataset's detailed annotations are crucial for generating precise rail track
 
 ## Project workflow
 
-![Workflow](https://github.com/AnanthaPadmanaban-KrishnaKumar/RT-FE/blob/main/assets/RT-FE%20flowchart.png)
+![Workflow](https://github.com/akash6murali/railtrack-feature-extractor/blob/main/assets/RT-FE%20flowchart.png)
 
 - **Video Ingestion**: The process begins with the input video, which is the raw footage needing analysis.
 - **Frame Extraction**: The input video is broken down into individual frames to allow for detailed processing of each moment in the footage.
@@ -60,7 +60,7 @@ The dataset's detailed annotations are crucial for generating precise rail track
 - **Copy and Concatenate**: Merges multi-level features for improved localization.
 - **Convolutional Layers + Batch Normalization**: Refines the feature maps to deliver the final segmented output.
 
-![U-Net Architecture with VGG Backbone](https://github.com/AnanthaPadmanaban-KrishnaKumar/RT-FODS/blob/main/assets/VGG-Unet.png)
+![U-Net Architecture with VGG Backbone](https://github.com/akash6murali/railtrack-feature-extractor/blob/main/assets/VGG-Unet.png)
 
 ## Dataset Composition
 
@@ -95,23 +95,23 @@ To extract rail line features using a U-Net with VGG19 as the backbone, we imple
 #### Weighted Binary Crossentropy
 
 Our custom loss function begins with weighted binary crossentropy, addressing the class imbalance issue common in rail image segmentation. The weight parameters `w0` and `w1` are assigned to the background and rail line classes, respectively, to focus the model's learning on the minority class, which is critical for the detection task.
-![U-Net Architecture with VGG Backbone](https://github.com/AnanthaPadmanaban-KrishnaKumar/RT-FODS/blob/main/assets/weighted.png)
+![U-Net Architecture with VGG Backbone](https://github.com/akash6murali/railtrack-feature-extractor/blob/main/assets/weighted.png)
 
 #### Focal Loss
 
 The focal loss component reshapes the loss function to prioritize challenging, misclassified examples. It introduces hyperparameters `alpha` and `gamma` to control the contribution of each example to the loss, enabling the model to focus on difficult cases crucial for accurate feature extraction.
 
-![U-Net Architecture with VGG Backbone](https://github.com/AnanthaPadmanaban-KrishnaKumar/RT-FODS/blob/main/assets/Focal.png)
+![U-Net Architecture with VGG Backbone](https://github.com/akash6murali/railtrack-feature-extractor/blob/main/assets/Focal.png)
 
 #### Combined Loss
 
 We average weighted binary crossentropy and focal loss to create a robust loss landscape:
 
-![U-Net Architecture with VGG Backbone](https://github.com/AnanthaPadmanaban-KrishnaKumar/RT-FODS/blob/main/assets/combined.png)
+![U-Net Architecture with VGG Backbone](https://github.com/akash6murali/railtrack-feature-extractor/blob/main/assets/combined.png)
 
 Here is the loss graph from our training process, showing the model's learning progress:
 ### Loss Graph
-![U-Net Architecture with VGG Backbone](https://github.com/AnanthaPadmanaban-KrishnaKumar/RT-FODS/blob/main/assets/lossgraph.png)
+![U-Net Architecture with VGG Backbone](https://github.com/akash6murali/railtrack-feature-extractor/blob/main/assets/lossgraph.png)
 
 ## Accuracy Results
 
@@ -142,16 +142,16 @@ Abbreviations:
 The results demonstrate the effectiveness of the U-Net model with VGG19 backbone in segmenting rail track features:
 
 <p float="left">
-  <img src="https://github.com/AnanthaPadmanaban-KrishnaKumar/RT-FODS/blob/main/assets/rs00019_image.jpg" width="49%" style="margin-right: 2%;" />
-  <img src="https://github.com/AnanthaPadmanaban-KrishnaKumar/RT-FODS/blob/main/assets/rs00019.jpg" width="49%" />
+  <img src="https://github.com/akash6murali/railtrack-feature-extractor/blob/main/assets/rs00019_image.jpg" width="49%" style="margin-right: 2%;" />
+  <img src="https://github.com/akash6murali/railtrack-feature-extractor/blob/main/assets/rs00019.jpg" width="49%" />
 </p>
 <p float="left">
-  <img src="https://github.com/AnanthaPadmanaban-KrishnaKumar/RT-FODS/blob/main/assets/rs00025_image.jpg" width="49%" style="margin-right: 2%;" />
-  <img src="https://github.com/AnanthaPadmanaban-KrishnaKumar/RT-FODS/blob/main/assets/rs00025.jpg" width="49%" />
+  <img src="https://github.com/akash6murali/railtrack-feature-extractor/blob/main/assets/rs00025_image.jpg" width="49%" style="margin-right: 2%;" />
+  <img src="https://github.com/akash6murali/railtrack-feature-extractor/blob/main/assets/rs00025.jpg" width="49%" />
 </p>
 <p float="left">
-  <img src="https://github.com/AnanthaPadmanaban-KrishnaKumar/RT-FODS/blob/main/assets/rs00952_image.jpg" width="49%" style="margin-right: 2%;" />
-  <img src="https://github.com/AnanthaPadmanaban-KrishnaKumar/RT-FODS/blob/main/assets/rs00952.jpg" width="49%" />
+  <img src="https://github.com/akash6murali/railtrack-feature-extractor/blob/main/assets/rs00952_image.jpg" width="49%" style="margin-right: 2%;" />
+  <img src="https://github.com/akash6murali/railtrack-feature-extractor/blob/main/assets/rs00952.jpg" width="49%" />
 </p>
 
 This architecture ensures the production of a highly accurate segmentation map, distinctly delineating rail track features, critical for subsequent analysis and safety measures.
@@ -188,7 +188,7 @@ Make sure you have the following installed:
 - Git
 
 ### Installation
-1. git clone [https://github.com/AnanthaPadmanaban-KrishnaKumar/RT-FE.git](https://github.com/AnanthaPadmanaban-KrishnaKumar/RT-FODS)
+1. git clone [https://github.com/akash6murali/railtrack-feature-extractor.git](https://github.com/AnanthaPadmanaban-KrishnaKumar/RT-FODS)
 2. cd RT-FE
 3. pip install -r requirements.txt
 
